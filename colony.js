@@ -1,1 +1,1 @@
-PLACEHOLDER_WILL_FAIL_SIZE_CHECK
+@file:///workspace/ops-dashboard/colony.js
