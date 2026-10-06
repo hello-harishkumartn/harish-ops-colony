@@ -1,1 +1,366 @@
-PLACEHOLDER
+{
+  "refreshedAt": "2026-10-06T23:36:19+05:30",
+  "timezone": "Asia/Calcutta",
+  "mudrex": {
+    "balanceUsdt": 33.34,
+    "book": "flat",
+    "openPositions": 0,
+    "openOrders": 0
+  },
+  "agentCount": 20,
+  "themeDefault": "desert",
+  "routines": [
+    {
+      "id": "morning-ai",
+      "name": "Morning AI news top 10",
+      "schedule": "daily 6:00",
+      "status": "ok",
+      "tag": "last succeeded"
+    },
+    {
+      "id": "morning-invest",
+      "name": "Morning investment desk dump",
+      "schedule": "daily 6:00",
+      "status": "ok",
+      "tag": "last succeeded"
+    },
+    {
+      "id": "market-open",
+      "name": "Market open invest decision",
+      "schedule": "weekdays 9:45",
+      "status": "ok",
+      "tag": "last succeeded"
+    },
+    {
+      "id": "placement-digest",
+      "name": "Morning placement digest",
+      "schedule": "daily 7:11",
+      "status": "ok",
+      "tag": "last succeeded"
+    },
+    {
+      "id": "events-cards",
+      "name": "Morning events interest cards",
+      "schedule": "daily 7:18",
+      "status": "ok",
+      "tag": "last succeeded"
+    },
+    {
+      "id": "mudrex-watch",
+      "name": "Mudrex multi-strategy watch",
+      "schedule": ":08/:38 · 8–23",
+      "status": "watching",
+      "tag": "flat book"
+    },
+    {
+      "id": "mudrex-daily",
+      "name": "Mudrex daily desk report",
+      "schedule": "daily 7:53",
+      "status": "ok",
+      "tag": "last succeeded"
+    },
+    {
+      "id": "mudrex-monthly",
+      "name": "Mudrex monthly performance",
+      "schedule": "1st · 7:49",
+      "status": "never",
+      "tag": "never run"
+    },
+    {
+      "id": "honda-t30",
+      "name": "Honda R&D PPT T-30",
+      "schedule": "Oct 7 · 18:30",
+      "status": "pending",
+      "tag": "pending"
+    },
+    {
+      "id": "honda-t10",
+      "name": "Honda R&D PPT T-10",
+      "schedule": "Oct 7 · 18:50",
+      "status": "pending",
+      "tag": "pending"
+    },
+    {
+      "id": "sekar-t30",
+      "name": "Sekar supply-chain T-30",
+      "schedule": "Oct 9 · 14:30",
+      "status": "pending",
+      "tag": "pending"
+    },
+    {
+      "id": "sekar-t10",
+      "name": "Sekar supply-chain T-10",
+      "schedule": "Oct 9 · 14:50",
+      "status": "pending",
+      "tag": "pending"
+    }
+  ],
+  "desks": [
+    {
+      "id": "crypto",
+      "label": "Crypto Desk",
+      "color": "teal",
+      "agents": [
+        {
+          "id": "ccw",
+          "name": "Crypto Chart Watch",
+          "short": "Chart Watch",
+          "status": "watching",
+          "next": "Next :08",
+          "detail": "15m/1h/4h scans across 8 coins. Watching for S1/S2/S3 setups. Book flat."
+        },
+        {
+          "id": "cms",
+          "name": "Crypto Macro Scout",
+          "short": "Macro Scout",
+          "status": "idle",
+          "next": "Idle",
+          "detail": "BTC dominance, funding, risk-on/off tape. Idle overnight."
+        },
+        {
+          "id": "crd",
+          "name": "Crypto Risk Desk",
+          "short": "Risk Desk",
+          "status": "idle",
+          "next": "Idle",
+          "detail": "Position sizing, 1% risk rule, fee checks. Idle; book flat at 33.34 USDT."
+        }
+      ]
+    },
+    {
+      "id": "placement",
+      "label": "Placement Desk",
+      "color": "yellow",
+      "agents": [
+        {
+          "id": "pms",
+          "name": "Placement Mail Scout",
+          "short": "Mail Scout",
+          "status": "idle",
+          "next": "Next 7:11",
+          "detail": "Digests smail placement & internship mail. Next run tomorrow 7:11."
+        },
+        {
+          "id": "arm",
+          "name": "AI Roles Matcher",
+          "short": "AI Roles",
+          "status": "idle",
+          "next": "Idle",
+          "detail": "Matches open roles to Harish profile (AI / ML / product)."
+        },
+        {
+          "id": "prm",
+          "name": "PM Roles Matcher",
+          "short": "PM Roles",
+          "status": "idle",
+          "next": "Idle",
+          "detail": "Product / pre-incubation adjacent roles."
+        },
+        {
+          "id": "prr",
+          "name": "Placement Reminders",
+          "short": "Reminders",
+          "status": "pending",
+          "next": "Bukuly 10 Oct",
+          "detail": "Bukuly & DeepMind apps close 10 Oct. Not auto-applied."
+        }
+      ]
+    },
+    {
+      "id": "invest",
+      "label": "Investment Desk",
+      "color": "green",
+      "agents": [
+        {
+          "id": "gms",
+          "name": "Global Macro Scout",
+          "short": "Global Macro",
+          "status": "idle",
+          "next": "Next 6:00",
+          "detail": "Overnight macro dump into morning investment brief."
+        },
+        {
+          "id": "itm",
+          "name": "India Theme Mapper",
+          "short": "India Themes",
+          "status": "idle",
+          "next": "Idle",
+          "detail": "Sector / theme maps for Indian equities."
+        },
+        {
+          "id": "ith",
+          "name": "Investment Thesis Desk",
+          "short": "Thesis Desk",
+          "status": "idle",
+          "next": "Idle",
+          "detail": "Shared with Equity Research. Analysis only; no Kite orders."
+        },
+        {
+          "id": "pw",
+          "name": "Portfolio Watch",
+          "short": "Portfolio",
+          "status": "idle",
+          "next": "Idle",
+          "detail": "Kite holdings / margins when logged in. No sells without confirmation."
+        }
+      ]
+    },
+    {
+      "id": "equity",
+      "label": "Equity Research",
+      "color": "pink",
+      "agents": [
+        {
+          "id": "cha",
+          "name": "Chart Analyst",
+          "short": "Chart Analyst",
+          "status": "idle",
+          "next": "Idle",
+          "detail": "Technical overlays for Indian names. Paper journal scan still outstanding."
+        },
+        {
+          "id": "cr",
+          "name": "Company Research",
+          "short": "Company Rsch",
+          "status": "idle",
+          "next": "Idle",
+          "detail": "Deep-dives on request (e.g. IPO lock-in, SBI Funds Mgmt)."
+        },
+        {
+          "id": "fa",
+          "name": "Fundamental Analyst",
+          "short": "Fundamentals",
+          "status": "idle",
+          "next": "Idle",
+          "detail": "Filings, margins, quality screens."
+        },
+        {
+          "id": "ith2",
+          "name": "Investment Thesis Desk",
+          "short": "Thesis Desk",
+          "status": "idle",
+          "next": "Shared",
+          "detail": "Shared with Investment Desk."
+        }
+      ]
+    }
+  ],
+  "standalone": [
+    {
+      "id": "pa",
+      "name": "Harish PA",
+      "short": "Harish PA",
+      "status": "active",
+      "next": "Primary",
+      "color": "blue",
+      "primary": true,
+      "detail": "Primary ops agent. Orchestrates desks, WhatsApp Abbu notes, calendar, Drive journal, Mudrex reports."
+    },
+    {
+      "id": "wp",
+      "name": "Weekly Pulse",
+      "short": "Weekly Pulse",
+      "status": "idle",
+      "next": "Idle",
+      "color": "sand",
+      "detail": "End-of-week summary of bots, trades, and calendar."
+    },
+    {
+      "id": "aie",
+      "name": "AI Explorer",
+      "short": "AI Explorer",
+      "status": "idle",
+      "next": "Idle",
+      "color": "sand",
+      "detail": "Tooling & model experiments (NotebookLM, Finternet deep-dives)."
+    },
+    {
+      "id": "ffu",
+      "name": "Founder Follow-Up",
+      "short": "Founder F/U",
+      "status": "idle",
+      "next": "Idle",
+      "color": "sand",
+      "detail": "CIFIL / startup founder chase list."
+    },
+    {
+      "id": "tc",
+      "name": "Thesis Companion",
+      "short": "Thesis Comp.",
+      "status": "idle",
+      "next": "Idle",
+      "color": "sand",
+      "detail": "MS Entrepreneurship notes under Prof. Thenmozhi."
+    },
+    {
+      "id": "ls",
+      "name": "Lit Scout",
+      "short": "Lit Scout",
+      "status": "idle",
+      "next": "Idle",
+      "color": "sand",
+      "detail": "Papers & whitepapers (Finternet architecture tonight)."
+    },
+    {
+      "id": "pih",
+      "name": "Pre-Incubation Head",
+      "short": "Pre-Incub.",
+      "status": "idle",
+      "next": "Idle",
+      "color": "sand",
+      "detail": "CIFIL ops, mentor meetings, workshop prep."
+    },
+    {
+      "id": "es",
+      "name": "Events Scout",
+      "short": "Events Scout",
+      "status": "pending",
+      "next": "Honda Wed",
+      "color": "sand",
+      "detail": "Honda R&D PPT Wed 19:00; Sekar Fri 15:00; POSH closes Thu 14:00."
+    }
+  ],
+  "activity": [
+    {
+      "time": "23:23",
+      "color": "blue",
+      "body": "<em>Ops Colony</em> — 3D robots + mobile panel toggles published to GitHub Pages"
+    },
+    {
+      "time": "21:46",
+      "color": "teal",
+      "body": "<em>Mudrex S1 DOGE</em> stopped (−0.29 USDT). Book flat · 33.34 USDT."
+    },
+    {
+      "time": "23:00",
+      "color": "green",
+      "body": "<em>Daily Journal 2026-10-06</em> saved to Drive (Reena night → mentor → NPCI → Finternet)."
+    },
+    {
+      "time": "Tomorrow",
+      "color": "blue",
+      "body": "<em>NPCI sandbox demo</em> · 11:30 IST with Asim &amp; Vanitha."
+    },
+    {
+      "time": "Thu 8 Oct",
+      "color": "yellow",
+      "body": "<em>POSH registration</em> closes 14:00 — pick CRC slot Sat/Sun."
+    },
+    {
+      "time": "Wed 7 Oct",
+      "color": "pink",
+      "body": "<em>Honda R&D PPT</em> 19:00 · T-30 / T-10 alarms armed (18:30 / 18:50)."
+    },
+    {
+      "time": "16:17",
+      "color": "teal",
+      "body": "NEAR long filled @ 5.235 · later SL −0.35 at 18:00."
+    },
+    {
+      "time": "14:40",
+      "color": "teal",
+      "body": "ADA S2 TP hit · +0.45 USDT (0.2724 → 0.2765)."
+    }
+  ],
+  "publishNonce": "ops-colony-v2-robots-mobile"
+}
