@@ -267,24 +267,4 @@ function makeCompanion(color) {
     new THREE.MeshStandardMaterial({
       color: 0x2a3140,
       metalness: 0.7,
-      roughness: 0.35,
-      emissive: color,
-      emissiveIntensity: 0.15,
-    })
-  );
-  body.position.y = 0.12;
-  body.castShadow = true;
-  g.add(body);
-  const head = new THREE.Mesh(
-    new THREE.SphereGeometry(0.08, 10, 10),
-    new THREE.MeshStandardMaterial({
-      color: 0x3a4255,
-      metalness: 0.65,
-      roughness: 0.3,
-    })
-  );
-  head.position.y = 0.28;
-  g.add(head);
-  const eye = new THREE.Mesh(
-    new THREE.SphereGeometry(0.028, 8, 8),
-    new THREE.MeshStandardMaterial({
+      rough
