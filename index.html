@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<title>Harish Ops Colony — loading…</title>
+<style>
+html,body{height:100%;margin:0;background:#050505;color:#f5e6c8;font-family:system-ui,sans-serif;display:grid;place-items:center}
+.box{text-align:center}.spin{width:28px;height:28px;border:2px solid #fbbf24;border-top-color:transparent;border-radius:50%;margin:0 auto 12px;animation:s .8s linear infinite}
+@keyframes s{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+<div class="box"><div class="spin"></div><div id="m">Booting ops colony…</div></div>
+<script>
+const MANIFEST = {"index.html": 4, "colony.js": 7};
+async function loadB64(name){
+  let s='';
+  for(let i=0;i<MANIFEST[name];i++){
+    const r=await fetch('./assets/'+name+'.b64.'+i+'?t='+Date.now());
+    if(!r.ok) throw new Error(name+' part '+i);
+    s+=await r.text();
+  }
+  const bin=atob(s);
+  const bytes=new Uint8Array(bin.length);
+  for(let i=0;i<bin.length;i++) bytes[i]=bin.charCodeAt(i);
+  return new TextDecoder().decode(bytes);
+}
+(async()=>{
+  const m=document.getElementById('m');
+  try{
+    m.textContent='Loading robots…';
+    const [html, js]=await Promise.all([loadB64('index.html'), loadB64('colony.js')]);
+    const jsBlob=URL.createObjectURL(new Blob([js],{type:'text/javascript'}));
+    const parser=new DOMParser();
+    const doc=parser.parseFromString(html,'text/html');
+    document.documentElement.removeAttribute('style');
+    document.head.innerHTML='';
+    document.body.innerHTML='';
+    for(const node of [...doc.head.childNodes]){
+      if(node.nodeName==='SCRIPT' && node.getAttribute('type')==='module') continue;
+      document.head.appendChild(document.importNode(node,true));
+    }
+    document.documentElement.setAttribute('data-theme', doc.documentElement.getAttribute('data-theme')||'desert');
+    document.body.className=doc.body.className;
+    for(const node of [...doc.body.childNodes]){
+      if(node.nodeName==='SCRIPT' && node.getAttribute('type')==='module') continue;
+      document.body.appendChild(document.importNode(node,true));
+    }
+    const s=document.createElement('script');
+    s.type='module';
+    s.src=jsBlob;
+    document.body.appendChild(s);
+  }catch(e){
+    m.textContent='Boot failed: '+e.message;
+    console.error(e);
+  }
+})();
+</script>
+</body>
+</html>
